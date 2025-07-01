@@ -1,0 +1,22 @@
+{
+    "cmake.sourceDirectory": "/home/luca/Documents/Study/Robotica/Lightweigth 2025/Software/robotics-2025/lib/Adafruit BusIO",
+    "files.associations": {
+        "*.tcc": "cpp",
+        "iterator": "cpp",
+        "cmath": "cpp",
+        "iosfwd": "cpp",
+        "limits": "cpp",
+        "streambuf": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "functional": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "ostream": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp"
+    }
+}

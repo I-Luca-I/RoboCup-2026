@@ -1,18 +1,31 @@
 #include <Arduino.h>
-
-// put function declarations here:
-int myFunction(int, int);
+#include "sensors/sensors.h"
+#include "actuators/actuators.h"
+#include "control/control.h"
+#include "control/movement.h"
+#include "behavior/behavior.h"
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+	delay(1000);
+	init_sensors();
+	init_actuators();
+	init_control();
+	pinMode(LED_BUILTIN, OUTPUT); // LOW is ON, HIGH is OFF - Connected to switch2, avoid use. might catch fire
+
+	Serial.begin(9600);
 }
 
+#include "behavior/bounds.h"
 void loop() {
-  // put your main code here, to run repeatedly:
-}
+   	read_sensors();
+	update_control();
+	behavior();
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+	roller->off();
+	// roller->on();
+	
+	update_actuators();
+	driver->move();
+
+	Serial.println(compass->angle);
 }
